@@ -1,0 +1,149 @@
+
+<
+<div style="text-align:center;">Genetic Flash Animations</div>
+<div style="text-align:center;">Copyright McGraw Hill</div>
+<div id="container" style="position:relative;border:1px solid black;margin-top:5px;"></div>
+<div id="" style="display:flex;margin:3px;justify-content:space-around;"><div style="background-Image:url('img/pause.png');background-size:cover;width:32px;height:32px;background-position:center;" onclick="ppb(this)"></div><div style="background-Image:url('img/mute.png');background-size:cover;width:32px;height:32px;" onclick="ppb(this)"></div><div style="background-Image:url('img/fsc.png');background-size:cover;width:32px;height:32px;" onclick="ppb(this)"></div></div>
+
+<script src="ruffl/ruffle.js"></script>
+<script>
+    //https://github.com/ruffle-rs/ruffle/wiki/Using-Ruffle#javascript-api
+    window.RufflePlayer = window.RufflePlayer || {};
+	window.RufflePlayer.config = {}
+        var ruffle = window.RufflePlayer.newest();
+        var player = ruffle.createPlayer();
+        var container = document.getElementById("container");
+        container.appendChild(player);
+		player.style.width="100%";
+        player.load("aadm.swf").then(() => {
+		player.play();
+		});
+    function loadswf(path){
+        if(player.isPlaying){
+		   player.pause();
+		   player.load(path);
+		   player.play();
+		}else{
+		   player.load(path);
+		   player.play();
+		}
+	}
+	
+function clk(element){
+  if(element.style.backgroundColor =='lightgreen'){
+  }else{
+  element.style.backgroundColor ='lightgreen';
+  loadswf("genetic/"+element.innerText+".swf");
+  document.getElementById("gbp").style.backgroundColor ='white';
+  }
+  document.getElementById("gbp").id="";
+  element.id="gbp";
+}
+function ppb(elem){
+if(elem.style.backgroundImage =='url("img/pause.png")'){
+player.pause();
+elem.style.backgroundImage ="url('img/play.png')";
+elem.style.backgroundSize="cover";
+}else if ((elem.style.backgroundImage =='url("img/play.png")')){
+player.play();
+elem.style.backgroundImage="url('img/pause.png')";
+elem.style.backgroundSize="cover";
+}
+if(elem.style.backgroundImage =='url("img/mute.png")'){
+player.volume = 0;
+elem.style.backgroundImage ="url('img/unmute.png')";
+elem.style.backgroundSize="cover";
+}else if ((elem.style.backgroundImage =='url("img/unmute.png")')){
+player.volume = 1;
+elem.style.backgroundImage='url("img/mute.png")';
+elem.style.backgroundSize="cover";
+}
+if(player.fullscreenEnabled){
+if(elem.style.backgroundImage =='url("img/fsc.png")'){
+player.enterFullscreen();
+//elem.style.backgroundImage =="url('img/ssc.png')";
+elem.style.backgroundSize="cover";
+}
+}
+}
+</script>
+
+<table style="margin:auto;">
+<tr><th id="gbp" style="border:1px solid black;padding:3px;" onclick="clk(this)">Addition_and_deletion_mutations</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">aminoacyl_trna_synthesis</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">bacterial_chromosome_compaction</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">bacterial_conjugation</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">bacterial_transformation</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">bidirectional_replication</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">changes_in_chromosome_structure</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">chromatin_remodeling</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">compare_meiosis_mitosis</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">conjugation-f-gene</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">conjugation_DNA_transfer</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">consequence_of_inversion</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">control_of_cell_cycle</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">control_of_gene_expression_eukaryotes</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">c_DNA</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">direct_repair</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">DNA_fingerprinting</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">DNA_Gyrase_action</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">dna_interference</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">DNA_micro_array</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">Dna_Probe_or_Hybridization</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">dna_replication</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">dna_replication_fork</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">DNA_repli_structural_basis</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">dna_structure</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">Early_genetic_enginer_experiment</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">FISH</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">function_of_cohesin</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">gene_expression</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">gene_transfer_plant-Ti_plasmid</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">hershey_chase</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">holliday_model</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">horizantal__gene_transfer</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">how_nucleotides_are_added_in_dna_replication</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">how_tumor_supressor_gene_block_cell_division</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">integration_excision_of_plasmid</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">lacoperon_switches</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">Lac_operon induction</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">Lac_Operon</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">Methyl_directed_mismatch_repair</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">Mutation_by_base_substitution</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">nucleotide_excision_repair</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">pcr</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">proofreading_function_of_DNA_polymerase</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">Protein synthesis</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">protein_synthesis1</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">provseukaryotic_gene_expression</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">random_orientation_chromosome_in_meiosis</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">Restriction_endonuclease</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">RFLP</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">RNA_splicing</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">rolling_circle_mechanism_of_replication</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">semi_conservative_meselson_stahl</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">simple_transposition</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">slipped_strand_mispairing</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">soutern_bolt</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">special_transdruction_by_temperate_phage</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">Steps of cloning a gene</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">Steps of Gene Cloning</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">telomerase_function</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">thymine_dimer_formation_repair</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">Transcription (2)</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">Transcription</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">Transcription_complex_enhancer</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">transcription_factor</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">transduction</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">transduction_generalization</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">translation</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">translation_elongation</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">translation_initiation</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">translation_termination</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">transposons</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">Tryptophan-repressor</th></tr>
+<tr><th style="border:1px solid black;padding:3px;" onclick="clk(this)">x_inactivation</th></tr>
+</table>
+<div style="text-align:center;"> Created by</div>
+<div style="text-align:center;font:message-box;"> Zulqar Nayn</div>
+<div id="" style="background-Image:url('img/omc.png');background-size:cover;width:20%;aspect-ratio:1/1;margin:auto;"></div>
